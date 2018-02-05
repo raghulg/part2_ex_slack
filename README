@@ -2,6 +2,8 @@
 The code provides REST API's to query a database of deployment events. 
 
 The software is built using Django 2.0 and Apache 2. Requires Python v3.
+For Django to work with Apache, please copy the 000-default.conf 
+to /etc/apache2/sites-available/000-default.conf 
 
 The API's suppored in this code base.
 
