@@ -1,0 +1,33 @@
+<html>
+<h2>Deployment -  Event Store</h2>
+<br><br>
+
+The service provides the following RESTAPI's, and responses are in JSON.
+<br><br>
+
+***List events between a begin and end datetime***<br>
+Provides event details between a start and end datetime in JSON. Event
+details are id,sha,date(epoch timestamp),action,and engineer. <br><br>
+http://54.172.96.124/events/events?start_date=&lt;YYYYMMDD&gt;&amp;start_time=&lt;HH:MM:SS&gt;&amp;end_date=&lt;YYYYMMDD&gt;&amp;end_time=&lt;HH:MM:SS&gt;
+<br><br>
+
+***List events performed by an engineer***<br>
+Provides all events with details performed by an enginner, scan of
+complete database table.<br><br>
+http://54.172.96.124/events/name=&lt;name&gt;
+<br><br>
+
+***List all engineers in our data set***<br>
+Scan the database table for all the engineers (unique by engineer name - text field)<br><br>
+http://54.172.96.124/events/engineer
+<br><br>
+
+***Daily summaries of event statistics***<br>
+Provides a count of the number of actions by action type for a specific day.<br><br>
+http://54.172.96.124/events/summary/date=&lt;YYYYMMDD&gt;
+<br><br>
+
+ 
+The event store holds data between 2017-10-26 and 2017-11-02. <br>
+
+</html>
