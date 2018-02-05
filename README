@@ -20,7 +20,7 @@ http://<hostname>/events/name=<name>
 
 ***List all engineers in our data set
 Scan the database table for all the engineers (unique by engineer name - text field)
-http://<hostname>/events/engineer
+http://<hostname>/events/engineers
 
 ***Daily summaries of event statistics
 Provides a count of the number of actions by action type for a specific day.
