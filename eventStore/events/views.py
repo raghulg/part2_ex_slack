@@ -49,12 +49,15 @@ def daily_summary(request, event_date):
 
 
 def events_by_timePeriod(request):
-	
-	start_date = request.GET['start_date']
-	start_time = request.GET['start_time']
-	end_date = request.GET['end_date']	
-	end_time = request.GET['end_time']	
-	
+
+	try:	
+		start_date = request.GET['start_date']
+		start_time = request.GET['start_time']
+		end_date = request.GET['end_date']	
+		end_time = request.GET['end_time']	
+	except:
+		raise Http404("Missing required field")	
+
 	if (len(start_date) != 8 or len(end_date)!=8 ):
                 raise Http404("Incorrect DATE input")
 	
