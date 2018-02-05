@@ -1,0 +1,33 @@
+
+The code provides REST API's to query a database of deployment events. 
+
+The software is built using Django 2.0 and Apache 2. Requires Python v3.
+
+The API's suppored in this code base.
+
+***List events between a begin and end datetime
+Provides event details between a start and end datetime in JSON. Event 
+details are id,sha,date(epoch timestamp),action,and engineer.
+http://<hostname>/events/events?start_date=<YYYYMMDD>&start_time=<HH:MM:SS>&end_date=<YYYYMMDD>&end_time=<HH:MM:SS>
+
+
+***List events performed by an engineer
+Provides all events with details performed by an enginner, scan of 
+complete database table.
+http://<hostname>/events/name=<name>
+
+***List all engineers in our data set
+Scan the database table for all the engineers (unique by engineer name - text field)
+http://<hostname>/events/engineer
+
+***Daily summaries of event statistics
+Provides a count of the number of actions by action type for a specific day.
+http://<hostname>/events/summary/date=<YYYYMMDD>
+
+
+testService.py - Provides unit tests for checking the correctness of the service.
+The tests script requires the hostname running the service as input. 
+
+The service based on this code repository is currently available on 54.172.96.124
+>python testService.py [hostname]
+The hostname field is optional, defaults to 54.172.96.124
